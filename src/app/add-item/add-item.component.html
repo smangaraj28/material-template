@@ -1,0 +1,279 @@
+<mat-card>
+  <mat-card-title>
+    <div fxLayoutAlign="center stretch">
+      Edit Product
+    </div>
+  </mat-card-title>
+  <mat-card-content>
+    <br/>
+    <form [formGroup]="formGroup">
+      <mat-accordion formArrayName="formArray" multi>
+        <mat-expansion-panel expanded="true" formGroupName="0" [formGroup]="formArray?.get([0])">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxFlex="40%">
+              Item Details
+            </mat-panel-title>
+            <mat-panel-description>
+              Type Item Name, Type, SKU, Units
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Item Type</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemTypeFormControl"
+                       [(ngModel)]="item.itemType" name="ITYPE" required>
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Item Name</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemNameFormControl"
+                       type="text" [(ngModel)]="item.itemName" name="ITEMNAME">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>SKU</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemSKUFormControl"
+                       type="text" [(ngModel)]="item.itemSKU" name="ITEMSKU">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Unit</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemUnitFormControl"
+                       type="text" [(ngModel)]="item.itemUnit" name="ITEMUNIT">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded="true" formGroupName="1" [formGroup]="formArray?.get([1])">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxFlex="40%">
+              Item Descriptions
+            </mat-panel-title>
+            <mat-panel-description>
+              Type Item Brand, Manufacture, Size, Weight
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Dimensions(CM)</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemDimensionFormControl"
+                       [(ngModel)]="item.itemDimension" name="ITEMDIMENSION">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Weight(KG)</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemWeightFormControl"
+                       type="text" [(ngModel)]="item.itemWeight" name="ITEMWEIGHT">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Manufacturer</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemManufacturerFormControl"
+                       type="text" [(ngModel)]="item.itemManufacturer" name="ITEMMANUFACTURER">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Brand</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemBrandFormControl"
+                       type="text" [(ngModel)]="item.itemBrand" name="ITEMBRAND">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>UPC</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemUPCFormControl"
+                       type="text" [(ngModel)]="item.itemUPC" name="ITEMUPC">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>MPN</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemMPNFormControl"
+                       type="text" [(ngModel)]="item.itemMPN" name="ITEMMPN">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>EAN</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemEANFormControl"
+                       type="text" [(ngModel)]="item.itemEAN" name="ITEMEAN">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>ISBN</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemISBNFormControl"
+                       type="text" [(ngModel)]="item.itemISBN" name="ITEMISBN">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded="true" formGroupName="2"  [formGroup]="formArray?.get([2])">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxFlex="40%">
+              Sales Information
+            </mat-panel-title>
+            <mat-panel-description>
+              Type Item Sales Details
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Selling Price(INR)</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemSalePriceFormControl"
+                       type="text" [(ngModel)]="item.itemSalePrice" name="ITEMSALEPRICE">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Account</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemSaleAccountFormControl"
+                       type="text" [(ngModel)]="item.itemSaleAccount" name="ITEMSALEACCOUNT">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemSaleDescrFormControl"
+                       type="text" [(ngModel)]="item.itemSaleDescr" name="ITEMSALEDESCR">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded="true" formGroupName="3" [formGroup]="formArray?.get([3])">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxFlex="40%">
+              Purchase Informations
+            </mat-panel-title>
+            <mat-panel-description>
+              Type Item Purchase Details
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Purchase Price(INR)</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemPurchasePriceFormControl"
+                       type="text" [(ngModel)]="item.itemPurchasePrice" name="ITEMPURCHASEPRICE">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Account</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemPurchaseAccountFormControl"
+                       type="text" [(ngModel)]="item.itemPurchaseAccount" name="ITEMPURCHASEACCOUNT">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemPurchaseDescrFormControl"
+                       type="text" [(ngModel)]="item.itemPurchaseDescr" name="ITEMPURCHASEDESCR">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded="true" formGroupName="4" [formGroup]="formArray?.get([4])">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxFlex="40%">
+              Item Type
+            </mat-panel-title>
+            <mat-panel-description>
+              Type (composite, Group)
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Item Groups</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemGroupFlagFormControl"
+                       type="text" [(ngModel)]="item.itemGroupFlag" name="ITEMGROUPFLAG">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Composite Items</mat-label>
+                <input matInput placeholder="Total Quantity" formControlName="itemCompositeFlagFormControl"
+                       type="text" [(ngModel)]="item.itemCompositeFlag" name="ITEMCOMPOSITEFLAG">
+                <mat-error>
+                  Total Quantity is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </form>
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center center">
+    <button mat-raised-button color="primary">Add Item</button>
+  </mat-card-actions>
+</mat-card>
