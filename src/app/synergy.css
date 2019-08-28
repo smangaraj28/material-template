@@ -1,0 +1,164 @@
+.vdl-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px; }
+
+.vdl-col-md-6 {
+position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+.vdl-col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+$list-item-hover-bg: $accent-0-lightest;
+$list-item-selected-bg: $accent-0-lighter;
+$dual-select-icon-size: 20px;
+
+.dual-select {
+  display: block;
+  position: relative;
+
+  .dual-select__drag-proxy {
+    position: fixed;
+    background-color: $neutral-light;
+    border: 1px solid $neutral-dark;
+    z-index: 9999;
+    opacity: 0.5;
+    display: none;
+    pointer-events: none;
+    height: 40px;
+    overflow: hidden;
+    padding: 10px 15px;
+  }
+
+  .dual-select__list-holder {
+    height: 280px;
+    background-color: $white;
+    overflow: auto;
+    border: 1px solid $neutral-mid;
+
+    &.dual-select__list-holder--disabled {
+      background-color: $neutral-disabled;
+    } // puts the scrollbar on the left
+
+    &.available {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      overflow-x: hidden!important;
+      ul {
+        direction: ltr;
+      }
+    }
+
+    &.drop-empty-list {
+      border: 2px solid $accent-1;
+    }
+
+    .#{$vdl-prefix}dual-select__list-group {
+      padding-left: 0;
+    }
+
+    .dual-select__list-group,
+    .dual-select__list-group-item {
+      border-style: none;
+    }
+
+    .dual-select__list-group-item {
+      border-radius: 0;
+      border-style: solid;
+      border-width: 0;
+      border-color: $white;
+      transition: all 0.2s ease-in-out, border-width 0.1s ease-out;
+      height: auto;
+      min-height: 40px;
+      overflow: hidden;
+      padding: 10px 15px;
+      @include no-select();
+
+      &:hover {
+        background-color: $list-item-hover-bg;
+      }
+
+      &.active {
+        background-color: $list-item-selected-bg;
+      }
+
+      span.move-icon {
+        color: $neutral;
+        pointer-events: none;
+      }
+
+      &.active {
+        span.move-icon {
+          color: $white;
+        }
+      }
+
+      &.ghost {
+        opacity: 0.2;
+      }
+
+      &.drop-indicator-top {
+        border-top: 4px solid $accent-1;
+      }
+
+      &.drop-indicator-bottom {
+        border-bottom: 5px solid $accent-1;
+      }
+    }
+  }
+
+  .dual-select__button-overlay {
+    left: 50%;
+    margin-left: -27px;
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    height: 185px;
+
+    div {
+      border: 10px solid $content-bg-color;
+      padding: 0;
+      margin: 0 0 -10px 0;
+      border-radius: 30px;
+
+      button {
+        background-color: $accent-0-dark;
+        color: $white;
+        border-radius: 17px;
+        width: 34px;
+        height: 34px;
+        overflow: hidden;
+        border-style: none;
+        font-size: $dual-select-icon-size;
+        padding-top: 4px;
+        transition: background-color 0.2s;
+
+        &.move-all-right,
+        &.move-right {
+          padding-left: 7px;
+        }
+
+        &.move-all-left,
+        &.move-left {
+          padding-left: 4px;
+        }
+
+        &[disabled] {
+          background-color: $neutral;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map_get($grid-breakpoints, 'sm')) {
+    .#{$vdl-prefix}dual-select__button-overlay {
+      transform: rotate(90deg);
+      position: static;
+    }
+  }
+}

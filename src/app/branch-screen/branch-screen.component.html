@@ -1,0 +1,36 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100%">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="center" style="color: blue">
+        Hotel Details
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between" fxLayoutGap.xs="0">
+          <label><b>Hotel ID : </b>{{hotelId}}</label>
+          <label><b>Hotel Name:</b> {{hotelName}}</label>
+          <label> <b>Hotel Registration No:</b> {{hotelRegisterNo}}</label>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="100%">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="center" style="color: blue">
+        Branch Table
+      </mat-card-title>
+      <mat-card-content>
+        <app-person-list></app-person-list>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+        <button fxFlex="50%" mat-raised-button color="primary">
+          <mat-icon>account_circle</mat-icon>
+          Save All Branch
+        </button>
+        <button fxFlex="50%" mat-raised-button color="primary">
+          <mat-icon>person_add</mat-icon>
+          Cancel
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
