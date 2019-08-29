@@ -37,7 +37,7 @@
       </mat-card-title>
       <mat-card-content>
         <div fxFlex="40%" fxFlexAlign="flex-start">
-          <app-dual-select-demo></app-dual-select-demo>
+          <app-dual-select-role [data]="branches"></app-dual-select-role>
         </div>
         <div fxFlex="20%" fxLayoutAlign="center center">
           <button mat-raised-button (click)="proceed()">Proceed</button>

@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-dual-select-demo',
-  templateUrl: './dual-select-demo.component.html',
-  styleUrls: ['./dual-select-demo.component.css']
+  selector: 'app-dual-select-role',
+  templateUrl: './dual-select-role.component.html',
+  styleUrls: ['./dual-select-role.component.css']
 })
-export class DualSelectDemoComponent implements OnInit {
+export class DualSelectRoleComponent implements OnInit {
+  @Input() data;
   keepSorted = true;
   key: string;
   display: any;
@@ -26,23 +27,8 @@ export class DualSelectDemoComponent implements OnInit {
   };
 
   sourceTube: Array<string>;
-  confirmedTube: Array<string>;
-  tube: Array<string> = [
-    'Branch 1',
-    'Branch 2',
-    'Branch 3',
-    'Branch 4',
-    'Branch 5',
-    'Branch 6',
-    'Branch 7',
-    'Branch 8',
-    'Branch 9',
-    'Branch 10',
-    'Branch 11',
-    'Branch 12',
-    'Branch 13',
-    'Branch 14',
-  ];
+  public confirmedTube: Array<string>;
+  tube: Array<string>;
   breakpoint: any;
 
   private useTube() {
@@ -116,6 +102,7 @@ export class DualSelectDemoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.tube = this.data;
     this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
     this.doReset();
   }

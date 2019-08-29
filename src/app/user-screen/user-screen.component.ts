@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DualSelectDemoComponent} from '../dual-select/dual-select-demo/dual-select-demo.component';
+import {DualSelectRoleComponent} from '../dual-select/dual-select-role/dual-select-role.component';
 
 export interface BranchRoleTable {
   branchName: string;
@@ -13,8 +14,8 @@ export interface BranchRoleTable {
 })
 
 export class UserScreenComponent implements OnInit {
-  @ViewChild(DualSelectDemoComponent, {static: false})
-  private timerComponent: DualSelectDemoComponent;
+  @ViewChild(DualSelectRoleComponent, {static: false})
+  private timerComponent: DualSelectRoleComponent;
 
   hotelId: string;
   hotelName: string;
@@ -22,6 +23,7 @@ export class UserScreenComponent implements OnInit {
   displayedColumns: string[] = ['branchName', 'branchRole'];
   roleTableFlag = false;
   dataSource: BranchRoleTable[];
+  branches = [];
 
   constructor() {
     this.hotelId = 'NOVHYD';
@@ -31,6 +33,22 @@ export class UserScreenComponent implements OnInit {
 
 
   ngOnInit() {
+    this.branches = [
+      'Branch 1',
+      'Branch 2',
+      'Branch 3',
+      'Branch 4',
+      'Branch 5',
+      'Branch 6',
+      'Branch 7',
+      'Branch 8',
+      'Branch 9',
+      'Branch 10',
+      'Branch 11',
+      'Branch 12',
+      'Branch 13',
+      'Branch 14',
+    ];
   }
 
   proceed() {

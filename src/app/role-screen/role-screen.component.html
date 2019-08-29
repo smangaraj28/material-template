@@ -1,0 +1,71 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100%">
+    <mat-card>
+      <mat-card-title>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between" fxLayoutGap.xs="0">
+          <label><b>Hotel ID : </b>{{hotelId}}</label>
+          <label style="color: blue"><b>Role Details</b></label>
+          <label><b>Hotel Name: </b>{{hotelId}}</label>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between" fxLayoutGap.xs="0">
+          <mat-form-field appearance="outline">
+            <mat-label>Role Name</mat-label>
+            <input matInput placeholder="Role Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-select placeholder="Branch Role"
+                        [(value)]="selectedUser">
+              <mat-option value="Ram">Ram</mat-option>
+              <mat-option value="Sita">Sita</mat-option>
+              <mat-option value="Laxman">Laxman</mat-option>
+              <mat-option value="Hari">Hari</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="100%">
+    <mat-card>
+      <mat-card-title fxLayoutAlign="flex-start" style="color: blue">
+        Branch Table
+      </mat-card-title>
+      <mat-card-content>
+        <div fxFlex="40%" fxFlexAlign="flex-start">
+          <app-dual-select-role [data]="modules"></app-dual-select-role>
+        </div>
+        <div fxFlex="20%" fxLayoutAlign="center center">
+          <button mat-raised-button (click)="proceed()">Proceed</button>
+        </div>
+        <div *ngIf="roleTableFlag" fxFlex="40%" class="example-container">
+          <mat-accordion *ngFor="let type of moduleDetails" class="example-headers-align">
+            <mat-expansion-panel *ngFor="let item of type" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{item.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{item.id}}
+                  <mat-icon>account_circle</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <app-dual-select-role [data]="item.details"></app-dual-select-role>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+        <button fxFlex="50%" mat-raised-button color="primary">
+          <mat-icon>account_circle</mat-icon>
+          Save A Role
+        </button>
+        <button fxFlex="50%" mat-raised-button color="primary">
+          <mat-icon>person_add</mat-icon>
+          Cancel or Go Back
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
