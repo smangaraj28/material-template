@@ -1,9 +1,10 @@
 <div class="dual-list">
-  <div class="list-box" [ngStyle]="{ 'order' :  direction() ? 1 : 2 }">
+  <div class="list-box" [ngStyle]="{ 'order' :  direction() ? 1 : 2, 'margin-left' : direction() ? 0 : '10px' }">
     <form *ngIf="filter" class="filter">
       <input class="form-control" name="filterSource" [(ngModel)]="available.picker"
              (ngModelChange)="onFilter(available)">
     </form>
+
     <div class="record-picker">
       <ul [ngStyle]="{'max-height': height, 'min-height': height}" [ngClass]="{over:available.dragOver}"
           (drop)="drop($event, confirmed)" (dragover)="allowDrop($event, available)" (dragleave)="dragLeave()">
@@ -27,8 +28,8 @@
               [disabled]="disabled || isAllSelected(available)">{{format.all}}</button>
     </div>
     <div>
-      <button type="button" (click)="selectNone(available)"
-              [disabled]="!isAnySelected(available)">{{format.none}}</button>
+      <button type="button" (click)="selectNone(confirmed)"
+              [disabled]="!isAnySelected(confirmed)">{{format.none}}</button>
     </div>
     <div>
       <button type="button" name="removeBtn"
@@ -39,16 +40,13 @@
       <button type="button" (click)="selectAll(confirmed)"
               [disabled]="disabled || isAllSelected(confirmed)">{{format.all}}</button>
     </div>
-    <div>
-      <button type="button" (click)="selectNone(confirmed)"
-              [disabled]="!isAnySelected(confirmed)">{{format.none}}</button>
-    </div>
   </div>
-  <div class="list-box" [ngStyle]="{ 'order' : direction() ? 2 : 1 }">
+  <div class="list-box" [ngStyle]="{ 'order' : direction() ? 2 : 1, 'margin-left' : direction() ? '10px' : 0 }">
     <form *ngIf="filter" class="filter">
       <input class="form-control" name="filterDestination" [(ngModel)]="confirmed.picker"
              (ngModelChange)="onFilter(confirmed)">
     </form>
+
     <div class="record-picker">
       <ul [ngStyle]="{'max-height': height, 'min-height': height}" [ngClass]="{over:confirmed.dragOver}"
           (drop)="drop($event, available)" (dragover)="allowDrop($event, confirmed)" (dragleave)="dragLeave()">

@@ -112,7 +112,7 @@ export class DualSelectDemoComponent implements OnInit {
 
   swapDirection() {
     this.sourceLeft = !this.sourceLeft;
-    this.format.direction = this.sourceLeft ? DualListComponent.LTR : DualListComponent.RTL;
+    this.format.direction = this.sourceLeft ? 'left-to-right' : 'right-to-left';
   }
 
   ngOnInit(): void {
