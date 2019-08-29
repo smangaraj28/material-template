@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DualSelectDemoComponent} from '../dual-select/dual-select-demo/dual-select-demo.component';
 import {DualSelectRoleComponent} from '../dual-select/dual-select-role/dual-select-role.component';
 
 export interface BranchRoleTable {

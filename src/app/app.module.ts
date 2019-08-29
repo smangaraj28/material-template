@@ -15,9 +15,7 @@ import {PersonListComponent} from './angular-table/person-list/person-list.compo
 import {PersonValidatorService} from './angular-table/person-list/person-validator.service';
 import {BranchScreenComponent} from './branch-screen/branch-screen.component';
 import {UserScreenComponent} from './user-screen/user-screen.component';
-import {DualSelectDemoComponent} from './dual-select/dual-select-demo/dual-select-demo.component';
 import {RoleScreenComponent} from './role-screen/role-screen.component';
-import {DualSelectModuleComponent} from './dual-select/dual-select-module/dual-select-module.component';
 import {DualSelectRoleComponent} from './dual-select/dual-select-role/dual-select-role.component';
 
 
